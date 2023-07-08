@@ -32,16 +32,20 @@ public class GameManager : MonoBehaviour
     public GameConfig.HandPack PrevHandPack;
 
     [SerializeField] private Animator startScreenanimator;
+    [SerializeField] private CutScenePlayer cutScenePlayer;
     
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
 
     public int patientCount = 10;
     public int doubleSymptomAfterPatientCount = 5;
 
+    public GameState CurrentState;
+    
     private bool locked;
     private void Start()
     {
-        ChangeState(GameState.StartScreen);
+        CurrentState = GameState.StartScreen;
+        // ChangeState(GameState.StartScreen);
     }
 
     public void StartGame()
@@ -73,12 +77,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameState newState)
     {
+        CurrentState = newState;
         BubbleManager.singleton.CloseSpeechBubble();
         BubbleManager.singleton.CloseEmojiBubble();
         switch (newState)
         {
-            case GameState.StartScreen:
-                break;
             case GameState.State1:
                 patientCount--;
                 
@@ -101,7 +104,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Animation:
                 //toDo:Animation Logic
-                ChangeState(GameState.State2);
+                cutScenePlayer.PlayAnim(() =>
+                {
+                    ChangeState(GameState.State2);
+                });
                 break;
             case GameState.Settlement:
                 break;

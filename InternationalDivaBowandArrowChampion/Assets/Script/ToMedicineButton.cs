@@ -9,6 +9,9 @@ public class ToMedicineButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameplay1.GoToMedicine();
+        if (GameManager.Instance.CurrentState == GameState.State1)
+        {
+            gameplay1.GoToMedicine();
+        }
     }
 }

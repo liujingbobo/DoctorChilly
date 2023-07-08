@@ -14,7 +14,7 @@ public class OnDeskClickHold : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameplay1.TriggerVibration();
+            gameplay1.TriggerVibration();
     }
 
     private void OnMouseUp()
