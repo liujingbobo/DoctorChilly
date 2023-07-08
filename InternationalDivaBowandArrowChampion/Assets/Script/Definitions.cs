@@ -21,3 +21,10 @@ public enum Herb
     Gentian = 20, // 龙胆
     Coptis = 30, // 黄连
 }
+
+public enum PharmacyResult
+{
+    Good, // 全中
+    Normal, // 对部分
+    Bad // 
+}
