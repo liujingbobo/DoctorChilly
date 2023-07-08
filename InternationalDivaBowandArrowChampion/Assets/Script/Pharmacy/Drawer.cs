@@ -18,7 +18,11 @@ public class Drawer : MonoBehaviour
     [SerializeField] private List<GameObject> OpenedDrawerSprites;
     [SerializeField] private List<GameObject> ClosedDrawerSprites;
 
-    private Coroutine closeDrawer; 
+    private Coroutine closeDrawer;
+
+    [SerializeField] private Ease _ease;
+
+    [SerializeField] private float moveTime = 0.35f;
     
     private void OnMouseDown()
     {
@@ -32,9 +36,9 @@ public class Drawer : MonoBehaviour
             }
             herbItem.SetActive(true);
             // Add herb immediately, moving to plate is just animation
-            plate.TakeHerbImmediately(herbContained);
+            var pos= plate.TakeHerbImmediately(herbContained);
             
-            herbItem.transform.DOMove(plate.transform.position, 0.35f).OnComplete(() =>
+            herbItem.transform.DOMove(pos, moveTime).SetEase(_ease).OnComplete(() =>
             {
                 plate.Present(herbItem, herbContained);
             });

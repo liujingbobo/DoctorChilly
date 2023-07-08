@@ -7,11 +7,9 @@ using Sirenix.Utilities;
 using UnityEngine;
 using Util;
 
-public class Pharmacy : Singleton<Pharmacy>
+public class Pharmacy : MonoBehaviour
 {
-    [SerializeField] private HerbConfig config;
-    
-    public Dictionary<Herb, Sprite> HerbSpritesDic =>config.HerbSpritesDic;
+    public Dictionary<Herb, Sprite> HerbSpritesDic =>GameManager.Instance.Config.HerbSpritesDic;
     
     public Plate plate;
 
@@ -19,26 +17,31 @@ public class Pharmacy : Singleton<Pharmacy>
 
     private List<Herb> _requiredHerb;
 
-    private bool _finished;
+    public bool paused;
 
     private bool _result;
 
-    public async UniTask<bool> Init(List<Herb> requiredHerb)
+    public void Init(List<Herb> requiredHerb)
     {
         Clear();
-        
-        _finished = false;
         
         _requiredHerb = requiredHerb;
         
         plate.Init(requiredHerb.Count);
-
-        await UniTask.WaitUntil(() => _finished);
-
-        return _result;
     }
 
-    public void Finish(List<Herb> collectedHerbs)
+    public void Finish()
+    {
+        GameManager.Instance.EndPharmacy(_result);
+    }
+
+    public void Clear()
+    {
+        plate.Clear();
+        Drawers.ForEach(_ => _.ClearAndReset());
+    }
+
+    public void FetchResult(List<Herb> collectedHerbs)
     {
         _result = true;
         
@@ -51,13 +54,12 @@ public class Pharmacy : Singleton<Pharmacy>
             }
             _requiredHerb.Remove(herb);
         }
-
-        _finished = true;
+        
+        BubbleManager.singleton.ShowEmojiBubble(_result ? EmojiType.Happy : EmojiType.Sad);
     }
-
-    public void Clear()
+    
+    public void ForceQuit()
     {
-        plate.Clear();
-        Drawers.ForEach(_ => _.ClearAndReset());
+        // TODO: 
     }
 }

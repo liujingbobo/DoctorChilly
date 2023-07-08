@@ -7,6 +7,10 @@ using UnityEngine;
 public class Plate : MonoBehaviour
 {
     [SerializeField] private Pharmacy pharmacy;
+    [SerializeField] private Sprite FinishedPack;
+    [SerializeField] private Sprite StartingPack;
+
+    [SerializeField] private SpriteRenderer sr;
     
     public List<GameObject> pivots = new List<GameObject>();
 
@@ -14,16 +18,23 @@ public class Plate : MonoBehaviour
 
     private List<Herb> CollectedHerb = new List<Herb>();
 
+    [SerializeField] private float CloseGap = 0.5f;
+
     public bool IsFull => CollectedHerb.Count >= targetAmount;
+
+    private bool locked = false;
     
     public void Init(int amount)
     {
         Clear();
         targetAmount = amount;
     }
-    public void TakeHerbImmediately(Herb herbType)
+    
+    public Vector3 TakeHerbImmediately(Herb herbType)
     {
+        var position = pivots.FirstOrDefault(_ => !_.activeSelf).transform.position;
         CollectedHerb.Add(herbType);
+        return position;
     }
     public void Present(GameObject obj, Herb herbType)
     {
@@ -40,18 +51,35 @@ public class Plate : MonoBehaviour
     }
     public void Clear()
     {
+        locked = false;
         pivots.ForEach(_ =>
         {
             _.SetActive(false);
         });
         CollectedHerb = new List<Herb>();
+        sr.sprite = StartingPack;
     }
+    
     private void OnMouseDown()
     {
-        if (IsFull)
+        if (IsFull && !locked)
         {
-            // Tell Pharmacy that collection is over. 
-            pharmacy.Finish(CollectedHerb);
+            locked = true;
+            StartCoroutine(ClosePack());
         }
+    }
+
+    IEnumerator ClosePack()
+    {
+        pharmacy.FetchResult(CollectedHerb);
+        pivots.ForEach(_ =>
+        {
+            _.SetActive(false);
+        });
+        sr.sprite = FinishedPack;
+        yield return new WaitForSeconds(CloseGap);
+        locked = false;
+        pharmacy.Finish();
+        // Tell Pharmacy that collection is over. 
     }
 }

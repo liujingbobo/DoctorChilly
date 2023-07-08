@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class BubbleManager : MonoBehaviour
 {
-    public BubbleManager singleton;
+    public static BubbleManager singleton;
 
     public GameObject speechBubble;
     public TextTypeWriterEffect bubbleWriterEffect;
 
     public GameObject emojiBubble;
     public Image[] emojiImage;
+
+    public float bubbleSpeed = 0.5f;
+    public float wordGap = 0.05f;
     
     public void Awake()
     {
@@ -24,12 +27,12 @@ public class BubbleManager : MonoBehaviour
 
     private Tween _speechBubbleTween;
     private Tween _emojiBubbleTween;
-    public void ShowSpeechBubble(string targetString, float typeInterval)
+    public void ShowSpeechBubble(string targetString)
     {
         speechBubble.transform.localScale = Vector3.zero;
         if(_speechBubbleTween != null) _speechBubbleTween.Kill();
-        _speechBubbleTween =speechBubble.transform.DOScale(1, 0.7f);
-        bubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, typeInterval);
+        _speechBubbleTween =speechBubble.transform.DOScale(1, bubbleSpeed);
+        bubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, wordGap);
         DOVirtual.DelayedCall(5f, () =>
         {
             CloseSpeechBubble();
@@ -53,7 +56,7 @@ public class BubbleManager : MonoBehaviour
         
         emojiBubble.transform.localScale = Vector3.zero;
         if(_emojiBubbleTween != null) _emojiBubbleTween.Kill();
-        _emojiBubbleTween = emojiBubble.transform.DOScale(1, 0.7f);
+        _emojiBubbleTween = emojiBubble.transform.DOScale(1, bubbleSpeed);
         DOVirtual.DelayedCall(3f, () =>
         {
             CloseEmojiBubble();
@@ -71,7 +74,7 @@ public class BubbleManager : MonoBehaviour
     [ContextMenu("TestSpeechBubble")]
     public void TestSpeechBubble()
     {
-        ShowSpeechBubble("大夫我要死了!测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试", 0.1f);
+        ShowSpeechBubble("大夫我要死了!测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试");
     }
 
 
