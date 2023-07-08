@@ -39,6 +39,10 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 6348d89008147ac43bde4c296708db94, type: 3}
     - {fileID: 21300000, guid: 0aac4f0fdaa1c1348abf97288b3461c0, type: 3}
     - {fileID: 21300000, guid: 467bbcb70d651a446bb4b302f3901a1b, type: 3}
+    - {fileID: 21300000, guid: 7c8ab4f1fd2548142aba3c786b7da836, type: 3}
+    - {fileID: 21300000, guid: b8b8f9c1cb582204fa89df4bea403a37, type: 3}
+    - {fileID: 21300000, guid: 8f8046c12a9766b40ac1735cb16a8c92, type: 3}
+    - {fileID: 21300000, guid: 630a62085a6f571488acffda746de402, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -294,7 +298,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 16
+      Data: 19
     - Name: 
       Entry: 7
       Data: 9|GameConfig+HandPack, Assembly-CSharp
@@ -525,13 +529,58 @@ MonoBehaviour:
       Data: 24|GameConfig+HandPack, Assembly-CSharp
     - Name: Hand
       Entry: 10
-      Data: 10
+      Data: 23
     - Name: StartDialog
       Entry: 6
       Data: 
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 24
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 25
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 26
+    - Name: StartDialog
+      Entry: 1
+      Data: "\u6C6A\u545C~\u6C6A\u545C~"
+    - Name: EndDialog
+      Entry: 1
+      Data: "\u6C6A\u6C6A\u6C6A\uFF01"
     - Name: 
       Entry: 8
       Data: 
