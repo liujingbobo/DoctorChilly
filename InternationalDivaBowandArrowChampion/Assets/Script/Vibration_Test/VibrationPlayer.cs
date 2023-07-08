@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
 using Lofelt.NiceVibrations;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,6 +10,8 @@ using UnityEngine;
 public class VibrationPlayer : MonoBehaviour
 {
     public const int total_beat = 8;
+
+    [SerializeField] private EventReference SE;
     
     [SerializeField] private float beat_duration = 0.2f;
     [SerializeField] private float gap_duration = 0.05f;
