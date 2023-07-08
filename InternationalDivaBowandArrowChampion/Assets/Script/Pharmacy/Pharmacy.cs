@@ -55,7 +55,7 @@ public class Pharmacy : MonoBehaviour
             _requiredHerb.Remove(herb);
         }
         
-        BubbleManager.singleton.ShowEmojiBubble(_result ? EmojiType.Happy : EmojiType.Sad);
+        BubbleManager.singleton.ShowEmojiBubble(_result ? EmojiType.Happy : EmojiType.Sad, _result);
     }
     
     public void ForceQuit()

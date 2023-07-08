@@ -14,6 +14,11 @@ public class BubbleManager : MonoBehaviour
 
     public GameObject emojiBubble;
     public Image[] emojiImage;
+    public Image _bubbleImage;
+    public Image _bubbleCornerImage;
+    
+    public Color successColor;
+    public Color failColor;
 
     public float bubbleSpeed = 0.5f;
     public float wordGap = 0.05f;
@@ -45,8 +50,19 @@ public class BubbleManager : MonoBehaviour
         _speechBubbleTween = speechBubble.transform.DOScale(0, 0.2f);
     }
 
-    public void ShowEmojiBubble(EmojiType emojiType)
+    public void ShowEmojiBubble(EmojiType emojiType, bool success)
     {
+        if (success)
+        {
+            _bubbleImage.color = successColor;
+            _bubbleCornerImage.color = successColor;
+        }
+        else
+        {
+            _bubbleImage.color = failColor;
+            _bubbleCornerImage.color = failColor;
+        }
+    
         foreach (var emoji in emojiImage)
         {
             emoji.gameObject.SetActive(false);
@@ -82,7 +98,7 @@ public class BubbleManager : MonoBehaviour
     [ContextMenu("TestEmojiBubble")]
     public void TestEmojiBubble()
     {
-        ShowEmojiBubble(EmojiType.Happy);
+        ShowEmojiBubble(EmojiType.Happy, true);
     }
 
 }
