@@ -15,7 +15,7 @@ public class GameConfig : SerializedScriptableObject
     public struct SymptomPack
     {
         public List<Herb> Herbs;
-        // TODO: wave
+        public DiagnosisPattern diagnosisPattern;
     }
 
     public class HandPack

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class GamePlay1 : MonoBehaviour
 {
@@ -11,22 +14,35 @@ public class GamePlay1 : MonoBehaviour
     public List<GameObject> flags;
     public Pharmacy pharmacy;
     public SpriteRenderer handRenderer;
+    public VibrationPlayer vibrationPlayer;
     
     public GameConfig.HandPack pickedHandPack;
-    public List<Symptom> pickedSymptoms;
+    public List<GameConfig.SymptomPack> pickedSymptomsPacks;
     
     private int _count;
 
     private Coroutine _countDownCoroutine;
-    public void SetUpHandAndSymptoms(GameConfig.HandPack handPack, List<Symptom> symptoms)
+    public void SetUpHandAndSymptoms(GameConfig.HandPack handPack, List<GameConfig.SymptomPack> symptoms)
     {
         ResetHand();
         pickedHandPack = handPack;
-        pickedSymptoms = symptoms;
+        pickedSymptomsPacks = symptoms;
 
         handRenderer.sprite = handPack.Hand;
     }
 
+    public void TriggerVibration()
+    {
+        Debug.Log($"Triggering Vibration");
+        vibrationPlayer.Play(pickedSymptomsPacks.Select(x=>x.diagnosisPattern).ToArray());
+    }
+
+    public void StopVibration()
+    {
+        Debug.Log($"Stopping Vibration");
+        vibrationPlayer.Stop();
+    }
+    
     [Button]
     public void MoveHand()
     {

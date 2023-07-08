@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9056646895450243515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bell
+  m_EditorClassIdentifier: 
+  Path: event:/Bell
+  Guid:
+    Data1: -885608819
+    Data2: 1272081981
+    Data3: -565593974
+    Data4: -1953623255
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3565
 --- !u!114 &-8936066796561223464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +54,141 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 158563
+--- !u!114 &-8615753042717481638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM_Gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/BGM_Gameplay
+  Guid:
+    Data1: -883630686
+    Data2: 1129234343
+    Data3: -372059764
+    Data4: 882108433
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 158563
+--- !u!114 &-8001169292922660423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heavy_Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Heavy_Drop
+  Guid:
+    Data1: -411393548
+    Data2: 1077235172
+    Data3: 759726764
+    Data4: 1007847108
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2140
+--- !u!114 &-7976839409334477530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drawer_Open
+  m_EditorClassIdentifier: 
+  Path: event:/Drawer_Open
+  Guid:
+    Data1: 969278841
+    Data2: 1194036543
+    Data3: -1715430754
+    Data4: 320804554
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2140
+--- !u!114 &-6964399221017042736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Herb_Drop_On_Desk
+  m_EditorClassIdentifier: 
+  Path: event:/Herb_Drop_On_Desk
+  Guid:
+    Data1: -368095354
+    Data2: 1277011175
+    Data3: 1476355508
+    Data4: 1491640556
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2140
+--- !u!114 &-3649095631603631871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Camera_Move
+  m_EditorClassIdentifier: 
+  Path: event:/Camera_Move
+  Guid:
+    Data1: 1400178241
+    Data2: 1321536662
+    Data3: -97597801
+    Data4: 1481520392
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2140
 --- !u!114 &-3126883275206561786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,11 +258,38 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244351656190620
+  lastModified: 638244425588208516
   FileSizes:
   - Name: Desktop
     Value: 2248544
   Exists: 1
+--- !u!114 &-35780133321749095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drawer_Close
+  m_EditorClassIdentifier: 
+  Path: event:/Drawer_Close
+  Guid:
+    Data1: -572428796
+    Data2: 1154945882
+    Data3: 703309494
+    Data4: -8926060
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3204
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,19 +307,19 @@ MonoBehaviour:
   - {fileID: -739636085165104091}
   EditorEvents:
   - {fileID: -3126883275206561786}
-  - {fileID: 4186577079674165177}
-  - {fileID: 5347173787980199656}
-  - {fileID: -976452614069664191}
-  - {fileID: 1501571908474155204}
-  - {fileID: 4560150059297012051}
-  - {fileID: -8936066796561223464}
-  - {fileID: 3416009861128326963}
+  - {fileID: -35780133321749095}
+  - {fileID: -3649095631603631871}
+  - {fileID: -7976839409334477530}
+  - {fileID: -6964399221017042736}
+  - {fileID: -9056646895450243515}
+  - {fileID: -8615753042717481638}
+  - {fileID: -8001169292922660423}
   EditorParameters: []
   MasterBanks:
   - {fileID: -739636085165104091}
   StringsBanks:
   - {fileID: 7068411106531588385}
-  cacheTime: 638244351656200588
+  cacheTime: 638244425588210301
   cacheVersion: 131605
 --- !u!114 &1501571908474155204
 MonoBehaviour:
@@ -282,7 +471,7 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244351656200588
+  lastModified: 638244425588210301
   FileSizes:
   - Name: Desktop
     Value: 1084

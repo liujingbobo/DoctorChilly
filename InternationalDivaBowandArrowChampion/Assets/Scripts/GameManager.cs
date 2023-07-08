@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Util;
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
                     Config.RandomlyGetSymtoms(2):
                     Config.RandomlyGetSymtoms(1);
                 
-                gamePlay1.SetUpHandAndSymptoms(CurrentHandPack, CurrentSymtoms);
+                gamePlay1.SetUpHandAndSymptoms(CurrentHandPack, CurrentSymtoms.Select(x=>Config.SymptomPacks[x]).ToList());
                 pharmacy.gameObject.SetActive(false);
                 gamePlay1.gameObject.SetActive(true);
                 gamePlay1.StartPlay1Routine(CurrentSymtoms);

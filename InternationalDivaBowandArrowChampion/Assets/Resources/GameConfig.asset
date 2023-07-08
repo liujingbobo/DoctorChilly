@@ -20,6 +20,10 @@ MonoBehaviour:
     - {fileID: 663243359, guid: 9ff282c5d258c4c0c89faa486415f183, type: 3}
     - {fileID: 1173173999, guid: 56037e3ee50de4d71816e61070b32cc7, type: 3}
     - {fileID: -1926043976, guid: 5b4dfc63c7a734f07930c3eaec42dde3, type: 3}
+    - {fileID: 11400000, guid: 916570fa829159344ab443119d90eaad, type: 2}
+    - {fileID: 11400000, guid: f4d93257413e27f4ba8eca96461c1c29, type: 2}
+    - {fileID: 11400000, guid: 8017cc72d16305945a2ab9fd487892b9, type: 2}
+    - {fileID: 11400000, guid: de37258f738c114409346c1c4d6c0ec6, type: 2}
     - {fileID: 21300000, guid: f5f282adec9d84b418e4e8811c18f3c6, type: 3}
     - {fileID: 21300000, guid: b9bb3ef285d51e54d859b9b7a59c2dae, type: 3}
     - {fileID: 21300000, guid: a8a7eb636fd6d48449c93a093ea7bb02, type: 3}
@@ -149,6 +153,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: diagnosisPattern
+      Entry: 10
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -182,6 +189,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: diagnosisPattern
+      Entry: 10
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -215,6 +225,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: diagnosisPattern
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -248,6 +261,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: diagnosisPattern
+      Entry: 10
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -272,7 +288,7 @@ MonoBehaviour:
       Data: 9|GameConfig+HandPack, Assembly-CSharp
     - Name: Hand
       Entry: 10
-      Data: 4
+      Data: 8
     - Name: StartDialog
       Entry: 1
       Data: hahahahaahha
@@ -287,7 +303,7 @@ MonoBehaviour:
       Data: 10|GameConfig+HandPack, Assembly-CSharp
     - Name: Hand
       Entry: 10
-      Data: 5
+      Data: 9
     - Name: StartDialog
       Entry: 1
       Data: MICKEY~MOUSE!
@@ -302,7 +318,7 @@ MonoBehaviour:
       Data: 11|GameConfig+HandPack, Assembly-CSharp
     - Name: Hand
       Entry: 10
-      Data: 6
+      Data: 10
     - Name: StartDialog
       Entry: 1
       Data: BeepBeepBEpp
