@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Type 3
   m_EditorClassIdentifier: 
   Beat_0: 0.125
-  Beat_1: 0
+  Beat_1: 0.125
   Beat_2: 0.125
-  Beat_3: 0
+  Beat_3: 0.125
   Beat_4: 0.125
-  Beat_5: 0
+  Beat_5: 0.125
   Beat_6: 0.125
-  Beat_7: 0
+  Beat_7: 0.125

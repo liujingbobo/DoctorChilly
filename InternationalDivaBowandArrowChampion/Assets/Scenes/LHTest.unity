@@ -784,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &473124092
 Transform:
   m_ObjectHideFlags: 0
@@ -3188,6 +3188,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2912860182804004270, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.599976
+      objectReference: {fileID: 0}
     - target: {fileID: 2912860182829025825, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_Name
       value: speechBubbleManager
@@ -3307,6 +3311,14 @@ PrefabInstance:
     - target: {fileID: 6050976312587849835, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050976312587849835, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050976312587849835, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 57.2
       objectReference: {fileID: 0}
     - target: {fileID: 6050976313254136949, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_AnchorMax.y
