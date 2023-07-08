@@ -27,6 +27,18 @@ MonoBehaviour:
     - {fileID: 21300000, guid: f5f282adec9d84b418e4e8811c18f3c6, type: 3}
     - {fileID: 21300000, guid: b9bb3ef285d51e54d859b9b7a59c2dae, type: 3}
     - {fileID: 21300000, guid: a8a7eb636fd6d48449c93a093ea7bb02, type: 3}
+    - {fileID: 21300000, guid: aa52f08013c64694287e4cd5a6616915, type: 3}
+    - {fileID: 21300000, guid: 96acc0579e4c4d043918b3a4e9dc07f1, type: 3}
+    - {fileID: 21300000, guid: e4e3c9ce9555175449fd835761a886e9, type: 3}
+    - {fileID: 21300000, guid: 55268f918f954394ea3a2089ec000d70, type: 3}
+    - {fileID: 21300000, guid: 7de94fac4a168694eaf89417d991f0c4, type: 3}
+    - {fileID: 21300000, guid: 1ae3ae2526b450d4abff5b5f6354877d, type: 3}
+    - {fileID: 21300000, guid: 8043a7700bfd65c41b3e9710a005a58f, type: 3}
+    - {fileID: 21300000, guid: dfc585b78bb30a64ba05fc6628dca170, type: 3}
+    - {fileID: 21300000, guid: 3bc09b6c4b55e3f4ab819e1f0f6d5a41, type: 3}
+    - {fileID: 21300000, guid: 6348d89008147ac43bde4c296708db94, type: 3}
+    - {fileID: 21300000, guid: 0aac4f0fdaa1c1348abf97288b3461c0, type: 3}
+    - {fileID: 21300000, guid: 467bbcb70d651a446bb4b302f3901a1b, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -282,7 +294,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 16
     - Name: 
       Entry: 7
       Data: 9|GameConfig+HandPack, Assembly-CSharp
@@ -322,6 +334,201 @@ MonoBehaviour:
     - Name: StartDialog
       Entry: 1
       Data: BeepBeepBEpp
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 11
+    - Name: StartDialog
+      Entry: 1
+      Data: "\u55B5\u55B5\u55B5"
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 12
+    - Name: StartDialog
+      Entry: 1
+      Data: "\u771F\u5B9F\u306F\u3044\u3064\u3082\u4E00\u3064\uFF01"
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 13
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 14
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 15
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 16
+    - Name: StartDialog
+      Entry: 1
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 17
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 18
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 19
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 20
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 21
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 22
+    - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 10
+    - Name: StartDialog
+      Entry: 6
+      Data: 
     - Name: EndDialog
       Entry: 6
       Data: 
