@@ -143,10 +143,10 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 20
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: 
       Entry: 13
       Data: 
@@ -179,7 +179,7 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 30
     - Name: 
       Entry: 3
       Data: 0
@@ -215,10 +215,10 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 30
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 20
     - Name: 
       Entry: 13
       Data: 
@@ -254,7 +254,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: 
       Entry: 13
       Data: 

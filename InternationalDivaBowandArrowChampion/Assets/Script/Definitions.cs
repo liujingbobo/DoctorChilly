@@ -16,10 +16,10 @@ public enum Symptom
 // 药草
 public enum Herb
 {
-    Ginseng = 0, // 人参
-    Angelica = 10, // 当归
-    Gentian = 20, // 龙胆
-    Coptis = 30, // 黄连
+    Red = 0, // 人参
+    Yellow = 10, // 当归
+    Blue = 20, // 龙胆
+    Green = 30, // 黄连
 }
 
 public enum PharmacyResult
