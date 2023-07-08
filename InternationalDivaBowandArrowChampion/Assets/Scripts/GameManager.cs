@@ -9,20 +9,10 @@ public class GameManager : Singleton<GameManager>
         switch (newState)
         {
             case GameState.Loading:
-                CommonUIManager.Instance.loadingPanel.gameObject.SetActive(true);
-                CommonUIManager.Instance.gameState2Panel.gameObject.SetActive(false);
-                SceneManager.LoadScene(0);
                 break;
             case GameState.State1:
-                SceneManager.LoadScene(1);
-                CommonUIManager.Instance.StartState1(5);
-                CommonUIManager.Instance.gameState1Panel.gameObject.SetActive(true);
                 break;
             case GameState.State2:
-                SceneManager.LoadScene(2);
-                CommonUIManager.Instance.gameState1Panel.gameObject.SetActive(false);
-                CommonUIManager.Instance.gameState2Panel.gameObject.SetActive(true);
-                CommonUIManager.Instance.StartState2();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
