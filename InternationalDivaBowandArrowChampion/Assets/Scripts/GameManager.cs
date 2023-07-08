@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -29,13 +30,45 @@ public class GameManager : MonoBehaviour
     
     public GameConfig.HandPack CurrentHandPack;
     public GameConfig.HandPack PrevHandPack;
+
+    [SerializeField] private Animator startScreenanimator;
+    
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
 
-    public int patientCount = 0;
+    public int patientCount = 10;
     public int doubleSymptomAfterPatientCount = 5;
+
+    private bool locked;
     private void Start()
     {
+        ChangeState(GameState.StartScreen);
+    }
+
+    public void StartGame()
+    {
+        if (!locked)
+        {
+            locked = true;
+            StartCoroutine(WaitTillEnd());
+        }
+    }
+
+    public void OpenCredit()
+    {
+        // TODO"
+    }
+
+    public void Exit()
+    {
+        // TODO:
+    }
+
+    IEnumerator WaitTillEnd()
+    {
+        startScreenanimator.SetTrigger("Trigger");
+        yield return new WaitForSeconds(2.1f);
         ChangeState(GameState.State1);
+        locked = false;
     }
 
     public void ChangeState(GameState newState)
@@ -44,8 +77,10 @@ public class GameManager : MonoBehaviour
         BubbleManager.singleton.CloseEmojiBubble();
         switch (newState)
         {
+            case GameState.StartScreen:
+                break;
             case GameState.State1:
-                patientCount++;
+                patientCount--;
                 
                 //select hands and select symptoms
                 CurrentHandPack = Config.RandomPickHandExcludeGiven(PrevHandPack);
@@ -68,6 +103,8 @@ public class GameManager : MonoBehaviour
                 //toDo:Animation Logic
                 ChangeState(GameState.State2);
                 break;
+            case GameState.Settlement:
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
@@ -75,7 +112,19 @@ public class GameManager : MonoBehaviour
 
     public void EndPharmacy(bool result)
     {
-        ChangeState(GameState.State1);
+        if (result)
+        {
+            gamePlay1.AddFlag();
+        }
+        
+        if (patientCount == 0)
+        {
+            ChangeState(GameState.Settlement);
+        }
+        else
+        {
+            ChangeState(GameState.State1);
+        }
         // if (result)
         // {
         //     BubbleManager.singleton.ShowEmojiBubble(EmojiType.Happy);
@@ -89,7 +138,9 @@ public class GameManager : MonoBehaviour
 
 public enum GameState
 {
+    StartScreen,
     State1,
     State2,
-    Animation
+    Animation,
+    Settlement
 }
