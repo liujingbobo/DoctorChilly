@@ -15,14 +15,24 @@ public class Drawer : MonoBehaviour
     
     [SerializeField] private GameObject herbPrefab;
 
-    [SerializeField] private List<GameObject> OpenedDrawerSprites;
-    [SerializeField] private List<GameObject> ClosedDrawerSprites;
+    [SerializeField] private GameObject Front;
 
     private Coroutine closeDrawer;
 
     [SerializeField] private Ease _ease;
 
     [SerializeField] private float moveTime = 0.35f;
+
+    [SerializeField] private float targetY = -0.09f;
+
+    [SerializeField] private float drawerSpeed = 0.1f;
+
+    [SerializeField] private float timeTillCLose = 1f;
+
+    [SerializeField] private Ease openEase;
+    
+
+    private Tween anim;
     
     private void OnMouseDown()
     {
@@ -58,7 +68,7 @@ public class Drawer : MonoBehaviour
 
     IEnumerator CloseDrawer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeTillCLose);
         ClearAndReset();
     }
     
@@ -69,7 +79,15 @@ public class Drawer : MonoBehaviour
 
     public void SwitchDrawer(bool value)
     {
-        ClosedDrawerSprites.ForEach(_ => _.gameObject.SetActive(!value));
-        OpenedDrawerSprites.ForEach(_ => _.gameObject.SetActive(value));
+        anim?.Kill();
+        
+        if (value)
+        {
+            anim = Front.transform.DOLocalMoveY(targetY, drawerSpeed).SetEase(openEase);
+        }
+        else
+        {
+            anim = Front.transform.DOLocalMoveY(0, drawerSpeed).SetEase(openEase);
+        }
     }
 }
