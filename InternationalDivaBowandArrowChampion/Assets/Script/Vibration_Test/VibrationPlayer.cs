@@ -11,8 +11,8 @@ public class VibrationPlayer : MonoBehaviour
 {
     public const int total_beat = 8;
 
-    [SerializeField] private EventReference SE;
-    
+    [SerializeField] private StudioEventEmitter SE;
+
     [SerializeField] private float beat_duration = 0.2f;
     [SerializeField] private float gap_duration = 0.05f;
     [SerializeField] private int max_loop_times = 100;
@@ -24,6 +24,7 @@ public class VibrationPlayer : MonoBehaviour
 
     public void Play(DiagnosisPattern[] patterns)
     {
+        if (SE) SE.Play();
         Stop();
         _playing = StartCoroutine(Process(patterns));
     }
