@@ -50,7 +50,7 @@ public class BubbleManager : MonoBehaviour
         _speechBubbleTween = speechBubble.transform.DOScale(0, 0.2f);
     }
 
-    public void ShowEmojiBubble(EmojiType emojiType, bool success)
+    public void ShowEmojiBubble(EmojiType emojiType, bool success, float time = 3f)
     {
         if (success)
         {
@@ -73,7 +73,7 @@ public class BubbleManager : MonoBehaviour
         emojiBubble.transform.localScale = Vector3.zero;
         if(_emojiBubbleTween != null) _emojiBubbleTween.Kill();
         _emojiBubbleTween = emojiBubble.transform.DOScale(1, bubbleSpeed);
-        DOVirtual.DelayedCall(3f, () =>
+        DOVirtual.DelayedCall(time, () =>
         {
             CloseEmojiBubble();
         });

@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
@@ -55,11 +58,17 @@ public class Pharmacy : MonoBehaviour
             _requiredHerb.Remove(herb);
         }
         
-        BubbleManager.singleton.ShowEmojiBubble(_result ? EmojiType.Happy : EmojiType.Sad, _result);
+        BubbleManager.singleton.ShowEmojiBubble(_result ? EmojiType.Happy : EmojiType.Sad, _result, 0.8f);
     }
     
     public void ForceQuit()
     {
         // TODO: 
     }
+
+    public void PlaySE(SEManager.SEType t)
+    {
+        GameManager.Instance.SeManager.PlaySE(t);
+    }
+
 }

@@ -15,6 +15,7 @@ public class GameConfig : SerializedScriptableObject
 
     public Dictionary<PharmacyResult, Sprite> ResultDic = new Dictionary<PharmacyResult, Sprite>();
     
+
     public struct SymptomPack
     {
         public List<Herb> Herbs;

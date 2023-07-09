@@ -18,7 +18,7 @@ public class Plate : MonoBehaviour
 
     private List<Herb> CollectedHerb = new List<Herb>();
 
-    [SerializeField] private float CloseGap = 0.5f;
+    [SerializeField] private float CloseGap = 1f;
 
     public bool IsFull => CollectedHerb.Count >= targetAmount;
 
@@ -38,6 +38,7 @@ public class Plate : MonoBehaviour
     }
     public void Present(GameObject obj, Herb herbType)
     {
+        pharmacy.PlaySE(SEManager.SEType.PutOnPlate);
         Destroy(obj);
         var pivot = pivots.FirstOrDefault(_ => !_.activeSelf);
         if (pivot != null)
@@ -64,6 +65,7 @@ public class Plate : MonoBehaviour
     {
         if (IsFull && !locked)
         {
+            pharmacy.PlaySE(SEManager.SEType.Bell);
             locked = true;
             StartCoroutine(ClosePack());
         }
@@ -71,6 +73,7 @@ public class Plate : MonoBehaviour
 
     IEnumerator ClosePack()
     {
+        pharmacy.PlaySE(SEManager.SEType.Packing);
         pharmacy.FetchResult(CollectedHerb);
         pivots.ForEach(_ =>
         {
