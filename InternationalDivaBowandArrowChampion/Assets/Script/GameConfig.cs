@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "GameConfig", menuName = "Configs", order = 1)]
 public class GameConfig : SerializedScriptableObject
@@ -15,8 +17,8 @@ public class GameConfig : SerializedScriptableObject
     public List<HandPack> HandConfigs = new List<HandPack>();
 
     public Dictionary<PharmacyResult, Sprite> ResultDic = new Dictionary<PharmacyResult, Sprite>();
-    
 
+    [Serializable]
     public struct SymptomPack
     {
         public List<Herb> Herbs;
@@ -35,6 +37,7 @@ public class GameConfig : SerializedScriptableObject
 
         public string LoseDialog;
 
+        public SEManager.SEType SeType = SEManager.SEType.Normal;
         // TODO: BGM
     }
 
