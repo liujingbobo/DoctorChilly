@@ -2381,23 +2381,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.33}
   m_EdgeRadius: 0
---- !u!1 &688487818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2912860182804004269, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-  m_PrefabInstance: {fileID: 2173429012559157945}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &688487823
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688487818}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,23 +5266,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.23}
   m_EdgeRadius: 0
---- !u!1 &1645728109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2626025319204041466, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-  m_PrefabInstance: {fileID: 2173429012559157945}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1645728114
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645728109}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1653852039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,10 +6711,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 332220867193199661, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 19.591309
-      objectReference: {fileID: 0}
     - target: {fileID: 2912860182335363973, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6780,18 +6742,6 @@ PrefabInstance:
     - target: {fileID: 2912860182804004270, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2912860182804004270, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 13.299988
-      objectReference: {fileID: 0}
-    - target: {fileID: 2912860182804004270, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2912860182829025824, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
-      propertyPath: wordGap
-      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2912860182829025825, guid: 0a8bfe75479b194448491914d43f57b5, type: 3}
       propertyPath: m_Name
