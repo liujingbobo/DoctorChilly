@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c080e680-601d-41ab-9f3e-0d3911094058}">
+		<property name="assetPath">
+			<value>Spe_BGM/手-特殊版权-音乐/派大星手.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>42.318367346938778</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7e135d7-3505-4c53-9612-af0653256f2b}</destination>
+		</relationship>
+	</object>
+</objects>

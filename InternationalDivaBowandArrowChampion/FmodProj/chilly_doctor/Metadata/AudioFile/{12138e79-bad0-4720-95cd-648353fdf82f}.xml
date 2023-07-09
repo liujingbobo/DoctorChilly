@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{12138e79-bad0-4720-95cd-648353fdf82f}">
+		<property name="assetPath">
+			<value>Spe_BGM/手-特殊版权-音乐/爱德华剪刀手.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>157.59673469387755</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7e135d7-3505-4c53-9612-af0653256f2b}</destination>
+		</relationship>
+	</object>
+</objects>

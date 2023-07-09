@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{5aafaccb-bd8c-4f2a-8c78-090ce8f8e080}">
+		<property name="assetPath">
+			<value>Spe_BGM/手-特殊版权-音乐/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7e135d7-3505-4c53-9612-af0653256f2b}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -116,6 +116,8 @@ public class Pharmacy : MonoBehaviour
             !symptom1Cured && !symptom2Cured ? EmojiType.Ill :
             EmojiType.Sad;
 
+        GameManager.Instance.SeManager.PlaySE(_result ? SEManager.SEType.HerbCorrect : SEManager.SEType.HerbWrong);
+        
         BubbleManager.singleton.ShowEmojiBubble(emoji, _result, 0.8f);
         BubbleManager.singleton.ShowEndSpeechBubble(_result
             ? GameManager.Instance.CurrentHandPack.WinDialog

@@ -24,7 +24,14 @@ public class SEManager : MonoBehaviour
         Packing,
         Bell,
         CameraMove,
-        Ding
+        Emm,
+        HerbCorrect,
+        HerbWrong,
+        Stamp,
+        Tap,
+        SlightTap,
+        MoveDown
+        
     }
     
     public void PlaySE(SEType t)

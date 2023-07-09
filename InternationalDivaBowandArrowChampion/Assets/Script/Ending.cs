@@ -25,4 +25,9 @@ public class Ending : MonoBehaviour
     {
         SceneManager.LoadScene("LHTest");
     }
+
+    public void PlayStamp()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Stamp);
+    }
 }

@@ -78,6 +78,10 @@
 		<property name="length">
 			<value>2.1402395833333334</value>
 		</property>
+		<property name="delayType">
+			<value>0</value>
+		</property>
+		<property name="name" />
 		<relationship name="sounds">
 			<destination>{fed95e01-c558-416a-a691-a74d8ebfb273}</destination>
 			<destination>{de373601-c363-4d2e-b41d-9cd864482e8f}</destination>

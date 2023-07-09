@@ -186,6 +186,16 @@ public class GameManager : MonoBehaviour
             Fade.DOColor(new Color(0,0,0,  0), time).From(new Color(0,0,0,  1));
         }
     }
+    public void PlayTap()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Tap);
+    }
+
+    public void PlaySlightTap()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.SlightTap);
+    }
+
 }
 
 public enum GameState
