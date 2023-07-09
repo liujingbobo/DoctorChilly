@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -5,6 +6,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -18,8 +20,15 @@ public class GamePlay1 : MonoBehaviour
     
     public GameConfig.HandPack pickedHandPack;
     public List<GameConfig.SymptomPack> pickedSymptomsPacks;
+    public TMP_Text patientCountTxt;
     
     private int _count;
+
+    private void Update()
+    {
+        patientCountTxt.text = $"待诊: {GameManager.Instance.patientCount}";
+    }
+
 
     private Coroutine _countDownCoroutine;
     public void SetUpHandAndSymptoms(GameConfig.HandPack handPack, List<GameConfig.SymptomPack> symptoms)

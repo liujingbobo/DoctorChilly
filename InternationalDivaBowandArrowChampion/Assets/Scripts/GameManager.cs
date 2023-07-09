@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    public const float PLAY_TIME_IN_MINUTE = 3f;
     public SEManager SeManager;
     public GameConfig Config;
 
@@ -33,6 +32,8 @@ public class GameManager : MonoBehaviour
     public GameConfig.HandPack CurrentHandPack;
     public GameConfig.HandPack PrevHandPack;
 
+    public CreditPage creditPage;
+    
     [SerializeField] private Animator startScreenanimator;
     [SerializeField] private CutScenePlayer cutScenePlayer;
     [SerializeField] private Tutorial tutorial;
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState;
     
     private bool locked;
+    
+    public float GameStartTime;
     private void Start()
     {
         CurrentState = GameState.StartScreen;
@@ -63,11 +66,13 @@ public class GameManager : MonoBehaviour
             locked = true;
             StartCoroutine(WaitTillEnd());
         }
+        GameStartTime = Time.time;
     }
 
     public void OpenCredit()
     {
         // TODO"
+        creditPage.Open();
     }
 
     public void Exit()
@@ -181,6 +186,16 @@ public class GameManager : MonoBehaviour
             Fade.DOColor(new Color(0,0,0,  0), time).From(new Color(0,0,0,  1));
         }
     }
+    public void PlayTap()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Tap);
+    }
+
+    public void PlaySlightTap()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.SlightTap);
+    }
+
 }
 
 public enum GameState
