@@ -22,13 +22,19 @@ public class CutScenePlayer : MonoBehaviour
     public void Ding()
     {
         Debug.Log("Ding");
-        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Ding);
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Emm);
 
     }
 
     public void OpenDrawer()
     {
         GameManager.Instance.SeManager.PlaySE(SEManager.SEType.OpenDrawer);
+    }
+
+    public void Emm()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Emm);
+
     }
     public void Ended()
     {

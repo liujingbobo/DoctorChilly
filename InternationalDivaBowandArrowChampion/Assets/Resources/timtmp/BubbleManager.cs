@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using CanvasGroup = UnityEngine.CanvasGroup;
 
 public class BubbleManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class BubbleManager : MonoBehaviour
     public Color failColor;
 
     public float bubbleSpeed = 0.5f;
-    public float wordGap = 0.05f;
+    public float wordGap = 0.01f;
     
     public void Awake()
     {
@@ -46,9 +47,13 @@ public class BubbleManager : MonoBehaviour
         if (string.IsNullOrEmpty(targetString)) return;
         speechBubble.transform.localScale = Vector3.zero;
         if(_speechBubbleTween != null) _speechBubbleTween.Kill();
-        _speechBubbleTween =speechBubble.transform.DOScale(1, bubbleSpeed);
+        if (speechBubble.GetComponentInChildren<CanvasGroup>() is { } cg)
+        {
+            cg.alpha = 1;
+        }
+        _speechBubbleTween = speechBubble.transform.DOScale(1, bubbleSpeed);
         bubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, wordGap);
-        _delayCloseTween1 = DOVirtual.DelayedCall(5f, () =>
+        _delayCloseTween1 = DOVirtual.DelayedCall(1.5f, () =>
         {
             CloseSpeechBubble();
         });
@@ -58,7 +63,11 @@ public class BubbleManager : MonoBehaviour
     {
         if(_delayCloseTween1 != null) _delayCloseTween1.Kill();
         if(_speechBubbleTween != null) _speechBubbleTween.Kill();
-        _speechBubbleTween = speechBubble.transform.DOScale(0, 0.2f);
+        if (speechBubble.GetComponentInChildren<CanvasGroup>() is { } cg)
+        {
+            _speechBubbleTween = cg.DOFade(0, 0.1f);
+        }
+        // _speechBubbleTween = speechBubble.transform.DOScale(0, 0.1f);
     }
 
     public void ShowEndSpeechBubble(string targetString)
@@ -66,9 +75,14 @@ public class BubbleManager : MonoBehaviour
         if (string.IsNullOrEmpty(targetString)) return;
         endSpeechBubble.transform.localScale = Vector3.zero;
         if(_endSpeechBubbleTween != null) _endSpeechBubbleTween.Kill();
+        if (endSpeechBubble.GetComponentInChildren<CanvasGroup>() is { } cg)
+        {
+            cg.alpha = 1;
+        }
+
         _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(1, bubbleSpeed);
         endSpeechBubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, wordGap);
-        _delayCloseTween2 = DOVirtual.DelayedCall(5f, () =>
+        _delayCloseTween2 = DOVirtual.DelayedCall(1.5f, () =>
         {
             CloseEndSpeechBubble();
         });
@@ -78,7 +92,12 @@ public class BubbleManager : MonoBehaviour
     {
         if(_delayCloseTween2 != null) _delayCloseTween2.Kill();
         if(_endSpeechBubbleTween != null) _endSpeechBubbleTween.Kill();
-        _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(0, 0.2f);
+        // _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(0, 0.1f);
+        if (endSpeechBubble.GetComponentInChildren<CanvasGroup>() is { } cg)
+        {
+            _endSpeechBubbleTween = cg.DOFade(0, 0.1f);
+        }
+        // _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(0, 0.1f);
     }
     
     public void ShowEmojiBubble(EmojiType emojiType, bool success, float time = 3f)
