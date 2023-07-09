@@ -30,4 +30,9 @@ public class Ending : MonoBehaviour
     {
         GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Stamp);
     }
+
+    public void PlayTap()
+    {
+        GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Tap);
+    }
 }
