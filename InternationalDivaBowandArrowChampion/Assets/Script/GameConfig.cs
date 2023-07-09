@@ -11,10 +11,12 @@ public class GameConfig : SerializedScriptableObject
 
     public Dictionary<Symptom, SymptomPack> SymptomPacks = new Dictionary<Symptom, SymptomPack>();
 
+    public HandPack normalHandPack;
     public List<HandPack> HandConfigs = new List<HandPack>();
 
     public Dictionary<PharmacyResult, Sprite> ResultDic = new Dictionary<PharmacyResult, Sprite>();
     
+
     public struct SymptomPack
     {
         public List<Herb> Herbs;
@@ -28,6 +30,10 @@ public class GameConfig : SerializedScriptableObject
         public string StartDialog;
 
         public string EndDialog;
+
+        public string WinDialog;
+
+        public string LoseDialog;
 
         // TODO: BGM
     }

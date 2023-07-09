@@ -12,6 +12,9 @@ public class BubbleManager : MonoBehaviour
     public GameObject speechBubble;
     public TextTypeWriterEffect bubbleWriterEffect;
 
+    public GameObject endSpeechBubble;
+    public TextTypeWriterEffect endSpeechBubbleWriterEffect;
+    
     public GameObject emojiBubble;
     public Image[] emojiImage;
     public Image _bubbleImage;
@@ -27,18 +30,25 @@ public class BubbleManager : MonoBehaviour
     {
         singleton = this;
         speechBubble.transform.localScale = Vector3.zero;
+        endSpeechBubble.transform.localScale = Vector3.zero;
         emojiBubble.transform.localScale = Vector3.zero;
     }
 
     private Tween _speechBubbleTween;
+    private Tween _endSpeechBubbleTween;
     private Tween _emojiBubbleTween;
+    
+    private Tween _delayCloseTween1;
+    private Tween _delayCloseTween2;
+    private Tween _delayCloseTween3;
     public void ShowSpeechBubble(string targetString)
     {
+        if (string.IsNullOrEmpty(targetString)) return;
         speechBubble.transform.localScale = Vector3.zero;
         if(_speechBubbleTween != null) _speechBubbleTween.Kill();
         _speechBubbleTween =speechBubble.transform.DOScale(1, bubbleSpeed);
         bubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, wordGap);
-        DOVirtual.DelayedCall(5f, () =>
+        _delayCloseTween1 = DOVirtual.DelayedCall(5f, () =>
         {
             CloseSpeechBubble();
         });
@@ -46,11 +56,32 @@ public class BubbleManager : MonoBehaviour
 
     public void CloseSpeechBubble()
     {
+        if(_delayCloseTween1 != null) _delayCloseTween1.Kill();
         if(_speechBubbleTween != null) _speechBubbleTween.Kill();
         _speechBubbleTween = speechBubble.transform.DOScale(0, 0.2f);
     }
 
-    public void ShowEmojiBubble(EmojiType emojiType, bool success)
+    public void ShowEndSpeechBubble(string targetString)
+    {
+        if (string.IsNullOrEmpty(targetString)) return;
+        endSpeechBubble.transform.localScale = Vector3.zero;
+        if(_endSpeechBubbleTween != null) _endSpeechBubbleTween.Kill();
+        _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(1, bubbleSpeed);
+        endSpeechBubbleWriterEffect.StartTypeWriteEffectWithInterval(targetString, wordGap);
+        _delayCloseTween2 = DOVirtual.DelayedCall(5f, () =>
+        {
+            CloseEndSpeechBubble();
+        });
+    }
+
+    public void CloseEndSpeechBubble()
+    {
+        if(_delayCloseTween2 != null) _delayCloseTween2.Kill();
+        if(_endSpeechBubbleTween != null) _endSpeechBubbleTween.Kill();
+        _endSpeechBubbleTween = endSpeechBubble.transform.DOScale(0, 0.2f);
+    }
+    
+    public void ShowEmojiBubble(EmojiType emojiType, bool success, float time = 3f)
     {
         if (success)
         {
@@ -73,13 +104,15 @@ public class BubbleManager : MonoBehaviour
         emojiBubble.transform.localScale = Vector3.zero;
         if(_emojiBubbleTween != null) _emojiBubbleTween.Kill();
         _emojiBubbleTween = emojiBubble.transform.DOScale(1, bubbleSpeed);
-        DOVirtual.DelayedCall(3f, () =>
+        
+        _delayCloseTween3 = DOVirtual.DelayedCall(time, () =>
         {
             CloseEmojiBubble();
         });
     }
     public void CloseEmojiBubble()
     {
+        if(_delayCloseTween3 != null) _delayCloseTween3.Kill();
         if(_emojiBubbleTween != null) _emojiBubbleTween.Kill();
         _emojiBubbleTween = emojiBubble.transform.DOScale(0, 0.2f);
     }

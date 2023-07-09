@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Util;
 
 public class GameManager : MonoBehaviour
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     public const float PLAY_TIME_IN_MINUTE = 3f;
-
+    public SEManager SeManager;
     public GameConfig Config;
 
     public GamePlay1 gamePlay1;
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator startScreenanimator;
     [SerializeField] private CutScenePlayer cutScenePlayer;
     [SerializeField] private Tutorial tutorial;
+
+    public Image Fade;
     
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
 
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitTillEnd()
     {
         startScreenanimator.SetTrigger("Trigger");
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(2.8f);
         tutorial.StartTutorial();
     }
 
@@ -87,6 +91,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentState = newState;
         BubbleManager.singleton.CloseSpeechBubble();
+        BubbleManager.singleton.CloseEndSpeechBubble();
         BubbleManager.singleton.CloseEmojiBubble();
         switch (newState)
         {
@@ -96,7 +101,7 @@ public class GameManager : MonoBehaviour
                 patientCount--;
                 
                 //select hands and select symptoms
-                CurrentHandPack = Config.RandomPickHandExcludeGiven(PrevHandPack);
+                CurrentHandPack = patientCount >=8? Config.normalHandPack: Config.RandomPickHandExcludeGiven(PrevHandPack);
                 CurrentSymtoms = patientCount < doubleSymptomAfterPatientCount?
                     Config.RandomlyGetSymtoms(2):
                     Config.RandomlyGetSymtoms(1);
@@ -116,7 +121,11 @@ public class GameManager : MonoBehaviour
                 //toDo:Animation Logic
                 cutScenePlayer.PlayAnim(() =>
                 {
-                    ChangeState(GameState.State2);
+                    StartCoroutine(PlayFadeInOut(endCallBack: () =>
+                    {
+                        SeManager.PlaySE(SEManager.SEType.CameraMove);
+                        ChangeState(GameState.State2);
+                    }));
                 });
                 break;
             case GameState.Settlement:
@@ -153,7 +162,23 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ChangeState(GameState.State1);
+            StartCoroutine(PlayFadeInOut(endCallBack: () =>
+            {
+                SeManager.PlaySE(SEManager.SEType.CameraMove);
+                ChangeState(GameState.State1);
+            }));
+
+        }
+    }
+
+    public IEnumerator PlayFadeInOut(float time = 0.1f, float gap = 0.5f, Action endCallBack = null)
+    {
+        if (Fade)
+        {
+            Fade.DOColor(new Color(0,0,0, 1), time).From(new Color(0,0,0,  0));
+            yield return new WaitForSeconds(gap);
+            endCallBack?.Invoke();
+            Fade.DOColor(new Color(0,0,0,  0), time).From(new Color(0,0,0,  1));
         }
     }
 }

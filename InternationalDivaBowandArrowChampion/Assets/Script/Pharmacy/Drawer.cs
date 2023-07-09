@@ -53,7 +53,7 @@ public class Drawer : MonoBehaviour
                 plate.Present(herbItem, herbContained);
             });
             
-            SwitchDrawer(true);
+            SwitchDrawer(true, true);
 
             if(closeDrawer != null) StopCoroutine(closeDrawer); 
             
@@ -69,24 +69,27 @@ public class Drawer : MonoBehaviour
     IEnumerator CloseDrawer()
     {
         yield return new WaitForSeconds(timeTillCLose);
-        ClearAndReset();
+        SwitchDrawer(false, true);
     }
     
     public void ClearAndReset()
     {
+        if(closeDrawer != null) StopCoroutine(closeDrawer);
         SwitchDrawer(false);
     }
 
-    public void SwitchDrawer(bool value)
+    public void SwitchDrawer(bool value, bool playSE = false)
     {
         anim?.Kill();
         
         if (value)
         {
+            if(playSE)GameManager.Instance.SeManager.PlaySE(SEManager.SEType.OpenDrawer);
             anim = Front.transform.DOLocalMoveY(targetY, drawerSpeed).SetEase(openEase);
         }
         else
         {
+            if(playSE)GameManager.Instance.SeManager.PlaySE(SEManager.SEType.CloseDrawer);
             anim = Front.transform.DOLocalMoveY(0, drawerSpeed).SetEase(openEase);
         }
     }
