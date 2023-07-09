@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         while (n > 1)
         {
             n--;
-            int k = UnityEngine.Random.Range(0, initFourSymptoms.Count);
+            int k = UnityEngine.Random.Range(0, n+1);
             var value = initFourSymptoms[k];
             initFourSymptoms[k] = initFourSymptoms[n];
             initFourSymptoms[n] = value;
