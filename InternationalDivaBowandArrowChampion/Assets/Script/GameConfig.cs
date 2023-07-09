@@ -82,11 +82,11 @@ public class GameConfig : SerializedScriptableObject
         return herbs;
     }
 
-    public HandPack RandomPickHandExcludeGiven(HandPack handPack)
+    public HandPack RandomPickHandExcludeGiven(List<HandPack> handPack)
     {
         var excludedList = handPack == null? 
             HandConfigs:
-            HandConfigs.Where(x => x != handPack).ToList();
+            HandConfigs.Where(x => !handPack.Contains(x)).ToList();
         return GetRandomItems<HandPack>(excludedList, 1)[0];
 
     }

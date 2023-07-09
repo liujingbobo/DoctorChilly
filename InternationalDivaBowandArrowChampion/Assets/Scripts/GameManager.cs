@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     public Pharmacy pharmacy;
     public Ending ending;
     public GameConfig.HandPack CurrentHandPack;
-    public GameConfig.HandPack PrevHandPack;
 
     public CreditPage creditPage;
 
@@ -58,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text patientCountTxt;
 
+    private List<GameConfig.HandPack> usedHands = new List<GameConfig.HandPack>();
+    
     private void Update()
     {
         if (CurrentState == GameState.State1)
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         GameStartTime = Time.time;
         heavySickIndicator.gameObject.SetActive(false);
         medicHeavySickIndicator.gameObject.SetActive(false);
+        usedHands = new List<GameConfig.HandPack>();
     }
 
     public void OpenCredit()
@@ -132,7 +134,7 @@ public class GameManager : MonoBehaviour
                 //select hands and select symptoms
                 CurrentHandPack = patientCount >= 8
                     ? Config.normalHandPack
-                    : Config.RandomPickHandExcludeGiven(PrevHandPack);
+                    : Config.RandomPickHandExcludeGiven(usedHands);
                 var heavySick = patientCount < doubleSymptomAfterPatientCount;
                 CurrentSymtoms = heavySick ? Config.RandomlyGetSymtoms(2) : Config.RandomlyGetSymtoms(1);
 
@@ -155,14 +157,14 @@ public class GameManager : MonoBehaviour
                     medicHeavySickIndicator.gameObject.SetActive(true);
                 }
 
-                PrevHandPack = CurrentHandPack;
+                usedHands.Add(CurrentHandPack);
                 gamePlay1.gameObject.SetActive(false);
                 pharmacy.gameObject.SetActive(true);
                 pharmacy.Init(Config.GetHerbs(CurrentSymtoms));
                 break;
             case GameState.Animation:
                 //toDo:Animation Logic
-                cutScenePlayer.PlayAnim(() =>
+                cutScenePlayer.PlayAnim(CurrentSymtoms.Count > 1? 1:0,() =>
                 {
                     StartCoroutine(PlayFadeInOut(endCallBack: () =>
                     {
@@ -202,6 +204,7 @@ public class GameManager : MonoBehaviour
             gamePlay1.AddFlag();
         }
 
+        medicHeavySickIndicator.gameObject.SetActive(false);
         if (patientCount == 0)
         {
             ChangeState(GameState.Settlement);

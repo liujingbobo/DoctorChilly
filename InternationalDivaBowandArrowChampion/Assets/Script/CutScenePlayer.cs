@@ -12,10 +12,11 @@ public class CutScenePlayer : MonoBehaviour
     
     private Action _callBack;
     [Button]
-    public void PlayAnim(Action onEndCallBack)
+    public void PlayAnim(int type, Action onEndCallBack)
     {
         mainImage.gameObject.SetActive(true);
-        animator.Play("CutSceneAnimation", 0,0);
+        if(type == 0) animator.Play("EasyCutSceneAnimation", 0,0);
+        else if(type==1) animator.Play("HardCutSceneAnimation", 0,0);
         _callBack = onEndCallBack;
     }
 
