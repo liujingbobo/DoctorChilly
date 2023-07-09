@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
@@ -109,12 +112,11 @@ public class Pharmacy : MonoBehaviour
 
         Debug.Log($"Pharmacy FetchResult, symptom1Cured:{symptom1}, symptom2Cured:{symptom2Cured}, result:{_result}");
 
-        
         var emoji = symptom1Cured && symptom2Cured ? EmojiType.Happy :
             !symptom1Cured && !symptom2Cured ? EmojiType.Ill :
             EmojiType.Sad;
 
-        BubbleManager.singleton.ShowEmojiBubble(emoji, _result);
+        BubbleManager.singleton.ShowEmojiBubble(emoji, _result, 0.8f);
         BubbleManager.singleton.ShowEndSpeechBubble(_result
             ? GameManager.Instance.CurrentHandPack.WinDialog
             : GameManager.Instance.CurrentHandPack.LoseDialog);
@@ -124,4 +126,10 @@ public class Pharmacy : MonoBehaviour
     {
         // TODO: 
     }
+
+    public void PlaySE(SEManager.SEType t)
+    {
+        GameManager.Instance.SeManager.PlaySE(t);
+    }
+
 }

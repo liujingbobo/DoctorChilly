@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     public const float PLAY_TIME_IN_MINUTE = 3f;
-
+    public SEManager SeManager;
     public GameConfig Config;
 
     public GamePlay1 gamePlay1;
@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
                 //toDo:Animation Logic
                 cutScenePlayer.PlayAnim(() =>
                 {
+                    SeManager.PlaySE(SEManager.SEType.CameraMove);
                     ChangeState(GameState.State2);
                 });
                 break;
@@ -154,6 +155,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SeManager.PlaySE(SEManager.SEType.CameraMove);
             ChangeState(GameState.State1);
         }
     }
