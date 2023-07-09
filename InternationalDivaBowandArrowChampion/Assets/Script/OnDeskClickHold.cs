@@ -14,11 +14,17 @@ public class OnDeskClickHold : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.CurrentState == GameState.State1)
+        {
             gameplay1.TriggerVibration();
+        }
     }
 
     private void OnMouseUp()
     {
-        gameplay1.StopVibration();
+        if (GameManager.Instance.CurrentState == GameState.State1)
+        {
+            gameplay1.StopVibration();
+        }
     }
 }

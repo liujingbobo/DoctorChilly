@@ -27,14 +27,17 @@ public class GameManager : MonoBehaviour
 
     public GamePlay1 gamePlay1;
     public Pharmacy pharmacy;
-    
+    public Ending ending;
     public GameConfig.HandPack CurrentHandPack;
     public GameConfig.HandPack PrevHandPack;
 
     [SerializeField] private Animator startScreenanimator;
     [SerializeField] private CutScenePlayer cutScenePlayer;
+    [SerializeField] private Tutorial tutorial;
     
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
+
+    public int correct;
 
     public int patientCount = 10;
     public int doubleSymptomAfterPatientCount = 5;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        correct = 0;
         if (!locked)
         {
             locked = true;
@@ -71,7 +75,11 @@ public class GameManager : MonoBehaviour
     {
         startScreenanimator.SetTrigger("Trigger");
         yield return new WaitForSeconds(2.1f);
-        ChangeState(GameState.State1);
+        tutorial.StartTutorial();
+    }
+
+    public void UnLocked()
+    {
         locked = false;
     }
 
@@ -82,12 +90,14 @@ public class GameManager : MonoBehaviour
         BubbleManager.singleton.CloseEmojiBubble();
         switch (newState)
         {
+            case GameState.Tutorial:
+                break;
             case GameState.State1:
                 patientCount--;
                 
                 //select hands and select symptoms
                 CurrentHandPack = Config.RandomPickHandExcludeGiven(PrevHandPack);
-                CurrentSymtoms = patientCount > doubleSymptomAfterPatientCount?
+                CurrentSymtoms = patientCount < doubleSymptomAfterPatientCount?
                     Config.RandomlyGetSymtoms(2):
                     Config.RandomlyGetSymtoms(1);
                 
@@ -110,6 +120,19 @@ public class GameManager : MonoBehaviour
                 });
                 break;
             case GameState.Settlement:
+                ending.gameObject.SetActive(true);
+                PharmacyResult result = PharmacyResult.Bad;
+                if (correct == 10)
+                {
+                    result = PharmacyResult.Best;
+                }else if (correct >= 7)
+                {
+                    result = PharmacyResult.Good;
+                }else if (correct >= 4)
+                {
+                    result = PharmacyResult.Normal;
+                }
+                ending.Fill(result, correct);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -120,6 +143,7 @@ public class GameManager : MonoBehaviour
     {
         if (result)
         {
+            correct++;
             gamePlay1.AddFlag();
         }
         
@@ -131,20 +155,13 @@ public class GameManager : MonoBehaviour
         {
             ChangeState(GameState.State1);
         }
-        // if (result)
-        // {
-        //     BubbleManager.singleton.ShowEmojiBubble(EmojiType.Happy);
-        // }
-        // else
-        // {
-        //     BubbleManager.singleton.ShowEmojiBubble(EmojiType.Ill);
-        // }
     }
 }
 
 public enum GameState
 {
     StartScreen,
+    Tutorial,
     State1,
     State2,
     Animation,

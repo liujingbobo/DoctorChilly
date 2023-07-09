@@ -24,7 +24,8 @@ public enum Herb
 
 public enum PharmacyResult
 {
-    Good, // 全中
-    Normal, // 对部分
-    Bad // 
+    Best, 
+    Good, 
+    Normal, 
+    Bad 
 }

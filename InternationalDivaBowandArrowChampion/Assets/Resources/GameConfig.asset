@@ -40,9 +40,13 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0aac4f0fdaa1c1348abf97288b3461c0, type: 3}
     - {fileID: 21300000, guid: 467bbcb70d651a446bb4b302f3901a1b, type: 3}
     - {fileID: 21300000, guid: 7c8ab4f1fd2548142aba3c786b7da836, type: 3}
-    - {fileID: 21300000, guid: b8b8f9c1cb582204fa89df4bea403a37, type: 3}
     - {fileID: 21300000, guid: 8f8046c12a9766b40ac1735cb16a8c92, type: 3}
+    - {fileID: 21300000, guid: b8b8f9c1cb582204fa89df4bea403a37, type: 3}
     - {fileID: 21300000, guid: 630a62085a6f571488acffda746de402, type: 3}
+    - {fileID: 21300000, guid: 27caaf7dbd2054c8483080591f105828, type: 3}
+    - {fileID: 21300000, guid: 16c067fc584544662956369fffebde0b, type: 3}
+    - {fileID: 21300000, guid: cb3084c784e1e489b80815b46a26bb72, type: 3}
+    - {fileID: 21300000, guid: 78d009671d28445e4899212c84c90d3f, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -581,6 +585,80 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 1
       Data: "\u6C6A\u6C6A\u6C6A\uFF01"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ResultDic
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[PharmacyResult, Assembly-CSharp],[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 29|System.Collections.Generic.EnumEqualityComparer`1[[PharmacyResult,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 30
     - Name: 
       Entry: 8
       Data: 

@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 
 public class Tutorial : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Tutorial : MonoBehaviour
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(NextPage);
         
-        BGImages.gameObject.SetActive(true);
+        if(BGImages) BGImages.gameObject.SetActive(true);
         button.gameObject.SetActive(false);
         foreach (var Image in Images)
         {
@@ -47,8 +48,11 @@ public class Tutorial : MonoBehaviour
         else
         {
             //TODO call manager to state 1 here
-            BGImages.gameObject.SetActive(false);
+            if(BGImages) BGImages.gameObject.SetActive(false);
+            Images.ForEach(_ => _.gameObject.SetActive(false));
+            button.gameObject.SetActive(false);
             manager.ChangeState(GameState.State1);
+            manager.UnLocked();
         }
     }
 

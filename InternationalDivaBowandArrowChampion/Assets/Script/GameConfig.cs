@@ -12,6 +12,9 @@ public class GameConfig : SerializedScriptableObject
     public Dictionary<Symptom, SymptomPack> SymptomPacks = new Dictionary<Symptom, SymptomPack>();
 
     public List<HandPack> HandConfigs = new List<HandPack>();
+
+    public Dictionary<PharmacyResult, Sprite> ResultDic = new Dictionary<PharmacyResult, Sprite>();
+    
     public struct SymptomPack
     {
         public List<Herb> Herbs;
