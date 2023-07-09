@@ -29,6 +29,10 @@ public class GameConfig : SerializedScriptableObject
 
         public string EndDialog;
 
+        public string WinDialog;
+
+        public string LoseDialog;
+
         // TODO: BGM
     }
 

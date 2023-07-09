@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentState = newState;
         BubbleManager.singleton.CloseSpeechBubble();
+        BubbleManager.singleton.CloseEndSpeechBubble();
         BubbleManager.singleton.CloseEmojiBubble();
         switch (newState)
         {
