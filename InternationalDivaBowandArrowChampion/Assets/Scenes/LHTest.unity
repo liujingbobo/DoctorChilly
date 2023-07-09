@@ -1585,6 +1585,7 @@ MonoBehaviour:
   pharmacy: {fileID: 8498196853575349366}
   handRenderer: {fileID: 751988289}
   vibrationPlayer: {fileID: 188098357}
+  patientCountTxt: {fileID: 0}
 --- !u!1 &547687570
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,6 +4009,7 @@ MonoBehaviour:
   gamePlay1: {fileID: 473124093}
   pharmacy: {fileID: 8498196853575349366}
   ending: {fileID: 1631666647}
+  creditPage: {fileID: 0}
   startScreenanimator: {fileID: 852841660}
   cutScenePlayer: {fileID: 827057129}
   tutorial: {fileID: 84104599}
@@ -4016,6 +4018,7 @@ MonoBehaviour:
   patientCount: 10
   doubleSymptomAfterPatientCount: 5
   CurrentState: 0
+  GameStartTime: 0
 --- !u!4 &1075199503
 Transform:
   m_ObjectHideFlags: 0
@@ -4926,6 +4929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2088383070}
   successAmountTxt: {fileID: 1974027161}
+  timeText: {fileID: 0}
 --- !u!1 &1638305151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,7 +6707,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_Sprite: {fileID: -1732142225, guid: 79148b439de23424db5a9d437ae52377, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6739,7 +6743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498196852546997932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1067, y: -0.0557, z: 0}
+  m_LocalPosition: {x: -0.0953, y: -0.0086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6973,7 +6977,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 13
   m_Sprite: {fileID: -1926043976, guid: 5b4dfc63c7a734f07930c3eaec42dde3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7008,7 +7012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498196852939783199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0202, y: -0.0463, z: 0}
+  m_LocalPosition: {x: -0.0191, y: -0.0546, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7326,7 +7330,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1173173999, guid: 56037e3ee50de4d71816e61070b32cc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7502,7 +7506,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 12
   m_Sprite: {fileID: 663243359, guid: 9ff282c5d258c4c0c89faa486415f183, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7538,7 +7542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498196854027883122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.086, y: -0.0083, z: 0}
+  m_LocalPosition: {x: -0.0894, y: -0.0914, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7654,7 +7658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498196854307949640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1574, y: -0.0523, z: 0}
+  m_LocalPosition: {x: -0.1534, y: -0.0589, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
