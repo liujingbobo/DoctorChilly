@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{102a8b36-c01c-470c-b1a8-bf960d5fb1fc}">
+		<property name="assetPath">
+			<value>Enhm_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>192</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.43446354166666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7e135d7-3505-4c53-9612-af0653256f2b}</destination>
+		</relationship>
+	</object>
+</objects>
