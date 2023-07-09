@@ -20,15 +20,8 @@ public class GamePlay1 : MonoBehaviour
     
     public GameConfig.HandPack pickedHandPack;
     public List<GameConfig.SymptomPack> pickedSymptomsPacks;
-    public TMP_Text patientCountTxt;
     
     private int _count;
-
-    private void Update()
-    {
-        patientCountTxt.text = $"待诊: {GameManager.Instance.patientCount}";
-    }
-
 
     private Coroutine _countDownCoroutine;
     public void SetUpHandAndSymptoms(GameConfig.HandPack handPack, List<GameConfig.SymptomPack> symptoms)
