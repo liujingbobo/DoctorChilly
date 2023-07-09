@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 using Util;
 
 public class GameManager : MonoBehaviour
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator startScreenanimator;
     [SerializeField] private CutScenePlayer cutScenePlayer;
     [SerializeField] private Tutorial tutorial;
+
+    public Image Fade;
     
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
 
@@ -117,8 +121,11 @@ public class GameManager : MonoBehaviour
                 //toDo:Animation Logic
                 cutScenePlayer.PlayAnim(() =>
                 {
-                    SeManager.PlaySE(SEManager.SEType.CameraMove);
-                    ChangeState(GameState.State2);
+                    StartCoroutine(PlayFadeInOut(endCallBack: () =>
+                    {
+                        SeManager.PlaySE(SEManager.SEType.CameraMove);
+                        ChangeState(GameState.State2);
+                    }));
                 });
                 break;
             case GameState.Settlement:
@@ -155,8 +162,23 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SeManager.PlaySE(SEManager.SEType.CameraMove);
-            ChangeState(GameState.State1);
+            StartCoroutine(PlayFadeInOut(endCallBack: () =>
+            {
+                SeManager.PlaySE(SEManager.SEType.CameraMove);
+                ChangeState(GameState.State1);
+            }));
+
+        }
+    }
+
+    public IEnumerator PlayFadeInOut(float time = 0.1f, float gap = 0.5f, Action endCallBack = null)
+    {
+        if (Fade)
+        {
+            Fade.DOColor(new Color(0,0,0, 1), time).From(new Color(0,0,0,  0));
+            yield return new WaitForSeconds(gap);
+            endCallBack?.Invoke();
+            Fade.DOColor(new Color(0,0,0,  0), time).From(new Color(0,0,0,  1));
         }
     }
 }

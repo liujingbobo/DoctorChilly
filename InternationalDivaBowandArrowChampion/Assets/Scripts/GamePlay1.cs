@@ -93,8 +93,6 @@ public class GamePlay1 : MonoBehaviour
         BubbleManager.singleton.ShowSpeechBubble(
             pickedHandPack.StartDialog);
         yield return new WaitForSeconds(2);
-
-        
         
         //todo：音效，手，病随机出来
         
