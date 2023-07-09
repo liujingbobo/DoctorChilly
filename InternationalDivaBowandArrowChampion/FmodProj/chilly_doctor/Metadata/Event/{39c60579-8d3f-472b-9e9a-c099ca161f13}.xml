@@ -82,9 +82,6 @@
 			<value>0</value>
 		</property>
 		<property name="name" />
-		<property name="pitch">
-			<value>24</value>
-		</property>
 		<relationship name="sounds">
 			<destination>{fed95e01-c558-416a-a691-a74d8ebfb273}</destination>
 			<destination>{de373601-c363-4d2e-b41d-9cd864482e8f}</destination>
@@ -101,8 +98,6 @@
 	<object class="MixerBusEffectChain" id="{f6bcf5a2-45ed-4f18-8960-21d1cd797acc}">
 		<relationship name="effects">
 			<destination>{f6d7178b-524b-4adc-968b-9f4214e8bc80}</destination>
-			<destination>{8cd4c614-95f0-4ab6-86d6-a2c788dedbad}</destination>
-			<destination>{aa1eb331-ef74-4935-bfd8-0edb4512daab}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fad610ce-062e-4a99-a2fe-e145468b41ac}" />
@@ -128,6 +123,4 @@
 	</object>
 	<object class="MixerBusFader" id="{674558de-6c2a-416e-b77b-1b38de7f92c9}" />
 	<object class="MixerBusFader" id="{f6d7178b-524b-4adc-968b-9f4214e8bc80}" />
-	<object class="PitchShifterEffect" id="{8cd4c614-95f0-4ab6-86d6-a2c788dedbad}" />
-	<object class="PitchShifterEffect" id="{aa1eb331-ef74-4935-bfd8-0edb4512daab}" />
 </objects>
