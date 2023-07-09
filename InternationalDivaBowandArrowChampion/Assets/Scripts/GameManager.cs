@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public StudioEventEmitter MainMusic;
+
+    public StudioEventEmitter GamePlayMusic;
+    
     public SEManager SeManager;
     public GameConfig Config;
 
@@ -73,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        MainMusic.Play();
         CurrentState = GameState.StartScreen;
         // ChangeState(GameState.StartScreen);
     }

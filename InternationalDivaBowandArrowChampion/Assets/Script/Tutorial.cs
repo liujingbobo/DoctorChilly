@@ -51,6 +51,7 @@ public class Tutorial : MonoBehaviour
             if(BGImages) BGImages.gameObject.SetActive(false);
             Images.ForEach(_ => _.gameObject.SetActive(false));
             button.gameObject.SetActive(false);
+            GameManager.Instance.MainMusic.Stop();
             manager.ChangeState(GameState.State1);
             manager.UnLocked();
         }
