@@ -23,7 +23,8 @@ public class SEManager : MonoBehaviour
         PutOnPlate,
         Packing,
         Bell,
-        CameraMove
+        CameraMove,
+        Ding
     }
     
     public void PlaySE(SEType t)

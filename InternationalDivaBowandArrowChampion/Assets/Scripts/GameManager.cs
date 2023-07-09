@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitTillEnd()
     {
         startScreenanimator.SetTrigger("Trigger");
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(2.8f);
         tutorial.StartTutorial();
     }
 
