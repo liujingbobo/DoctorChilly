@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
+using System = FMOD.System;
 
 public class GameManager : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text patientCountTxt;
 
     private List<GameConfig.HandPack> usedHands = new List<GameConfig.HandPack>();
+    private List<Symptom> initFourSymptoms = new List<Symptom>();
     
     private void Update()
     {
@@ -97,6 +99,17 @@ public class GameManager : MonoBehaviour
         heavySickIndicator.gameObject.SetActive(false);
         medicHeavySickIndicator.gameObject.SetActive(false);
         usedHands = new List<GameConfig.HandPack>();
+        initFourSymptoms = new List<Symptom>(){Symptom.Cold,Symptom.Exhausted,Symptom.Fever,Symptom.Insomnia};
+        //randomize four basic symtop
+        int n = initFourSymptoms.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = UnityEngine.Random.Range(0, initFourSymptoms.Count);
+            var value = initFourSymptoms[k];
+            initFourSymptoms[k] = initFourSymptoms[n];
+            initFourSymptoms[n] = value;
+        }
     }
 
     public void OpenCredit()
@@ -108,6 +121,7 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         // TODO:
+        Application.Quit();
     }
 
     IEnumerator WaitTillEnd()
@@ -142,6 +156,11 @@ public class GameManager : MonoBehaviour
                     ? Config.normalHandPack
                     : Config.RandomPickHandExcludeGiven(usedHands);
                 var heavySick = patientCount < doubleSymptomAfterPatientCount;
+
+                if (patientCount >= 6)
+                {
+                    CurrentSymtoms = new List<Symptom>() { initFourSymptoms[9 - patientCount] };
+                }
                 CurrentSymtoms = heavySick ? Config.RandomlyGetSymtoms(2) : Config.RandomlyGetSymtoms(1);
 
                 //show heavy sick indicator
