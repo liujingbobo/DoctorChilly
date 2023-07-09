@@ -30,8 +30,19 @@ public class SEManager : MonoBehaviour
         Stamp,
         Tap,
         SlightTap,
-        MoveDown
+        MoveDown,
         
+        CY,
+        SpongeBob,
+        Patrick,
+        DragonCat,
+        MagicGirl,
+        GoGiant,
+        Mickey,
+        Canon,
+        Zelda,
+        DoraADream,
+        Normal
     }
     
     public void PlaySE(SEType t)

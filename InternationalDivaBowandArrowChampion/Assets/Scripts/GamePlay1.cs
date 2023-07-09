@@ -97,6 +97,7 @@ public class GamePlay1 : MonoBehaviour
 
     private IEnumerator GamePlay1Routine()
     {
+        GameManager.Instance.SeManager.PlaySE(pickedHandPack.SeType);
         MoveHand();
         //speech bubble
         BubbleManager.singleton.ShowSpeechBubble(

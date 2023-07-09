@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3565
+--- !u!114 &-9052268455160141789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u6D3E\u5927\u661F"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u6D3E\u5927\u661F"
+  Guid:
+    Data1: 1521624974
+    Data2: 1210203692
+    Data3: 1936795044
+    Data4: 1524288576
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &-8936066796561223464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +162,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2140
+--- !u!114 &-7690862156211342625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u67EF\u5357"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u67EF\u5357"
+  Guid:
+    Data1: -307609940
+    Data2: 1220891820
+    Data3: -2044991598
+    Data4: 1102344619
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &-7053158853273565619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +270,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &-5948438210737211149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u9F99\u732B"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u9F99\u732B"
+  Guid:
+    Data1: 2025961183
+    Data2: 1171375474
+    Data3: -525571425
+    Data4: 1149850635
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-5274288858054991716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u521D\u97F3"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u521D\u97F3"
+  Guid:
+    Data1: -1687577655
+    Data2: 1214122414
+    Data3: -1317070414
+    Data4: 1403369306
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
+--- !u!114 &-4196431486110052039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u7C73\u8001\u9F20"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u7C73\u8001\u9F20"
+  Guid:
+    Data1: -98365612
+    Data2: 1291298206
+    Data3: -211209569
+    Data4: 515462871
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &-3649095631603631871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +405,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 272
+--- !u!114 &-2113963546634229219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u54C6\u5566A\u68A6"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u54C6\u5566A\u68A6"
+  Guid:
+    Data1: 1164398987
+    Data2: 1248220201
+    Data3: -1238743151
+    Data4: -360690024
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &-976452614069664191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,10 +474,10 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638245008278504990
+  lastModified: 638245016901002249
   FileSizes:
   - Name: Desktop
-    Value: 2980192
+    Value: 23170560
   Exists: 1
 --- !u!114 &-35780133321749095
 MonoBehaviour:
@@ -376,12 +538,22 @@ MonoBehaviour:
   - {fileID: 8592388097643099052}
   - {fileID: 6601134581988775616}
   - {fileID: 8650677035479705151}
+  - {fileID: 1431180235409824157}
+  - {fileID: 967231079236126372}
+  - {fileID: -4196431486110052039}
+  - {fileID: 7671497975025506054}
+  - {fileID: -2113963546634229219}
+  - {fileID: -9052268455160141789}
+  - {fileID: -7690862156211342625}
+  - {fileID: -5274288858054991716}
+  - {fileID: -5948438210737211149}
+  - {fileID: 4480849544937473492}
   EditorParameters: []
   MasterBanks:
   - {fileID: -739636085165104091}
   StringsBanks:
   - {fileID: 7068411106531588385}
-  cacheTime: 638245008278504990
+  cacheTime: 638245016901013681
   cacheVersion: 131605
 --- !u!114 &191264550139810630
 MonoBehaviour:
@@ -410,6 +582,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2664
+--- !u!114 &967231079236126372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u585E\u5C14\u8FBE"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u585E\u5C14\u8FBE"
+  Guid:
+    Data1: 1654365714
+    Data2: 1178347376
+    Data3: -185263949
+    Data4: -717523294
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &1431180235409824157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u8FDB\u51FB\u7684\u5DE8\u4EBA"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u8FDB\u51FB\u7684\u5DE8\u4EBA"
+  Guid:
+    Data1: 85231368
+    Data2: 1198707481
+    Data3: 433537941
+    Data4: -849577094
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4650
 --- !u!114 &1501571908474155204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +717,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3204
+--- !u!114 &4480849544937473492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u6D77\u7EF5\u5B9D\u5B9D"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u6D77\u7EF5\u5B9D\u5B9D"
+  Guid:
+    Data1: -527096848
+    Data2: 1336421557
+    Data3: -1920655468
+    Data4: -1627271536
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
 --- !u!114 &4560150059297012051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,11 +867,38 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244996766517206
+  lastModified: 638245016901013681
   FileSizes:
   - Name: Desktop
-    Value: 1460
+    Value: 1914
   Exists: 1
+--- !u!114 &7671497975025506054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SPE_BGM/\u9B54\u6CD5\u5C11\u5973"
+  m_EditorClassIdentifier: 
+  Path: "event:/SPE_BGM/\u9B54\u6CD5\u5C11\u5973"
+  Guid:
+    Data1: 583503211
+    Data2: 1277598601
+    Data3: -1176231237
+    Data4: -1155100957
+  Banks:
+  - {fileID: -739636085165104091}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6300
 --- !u!114 &8313376441119157205
 MonoBehaviour:
   m_ObjectHideFlags: 0
