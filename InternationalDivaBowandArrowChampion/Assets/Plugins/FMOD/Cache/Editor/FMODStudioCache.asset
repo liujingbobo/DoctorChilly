@@ -258,7 +258,7 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244473458953713
+  lastModified: 638244425588208516
   FileSizes:
   - Name: Desktop
     Value: 2248544
@@ -319,7 +319,7 @@ MonoBehaviour:
   - {fileID: -739636085165104091}
   StringsBanks:
   - {fileID: 7068411106531588385}
-  cacheTime: 638244473458963724
+  cacheTime: 638244425588210301
   cacheVersion: 131605
 --- !u!114 &1501571908474155204
 MonoBehaviour:
@@ -471,7 +471,7 @@ MonoBehaviour:
   Path: FmodProj/chilly_doctor/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244473458963724
+  lastModified: 638244425588210301
   FileSizes:
   - Name: Desktop
     Value: 1084

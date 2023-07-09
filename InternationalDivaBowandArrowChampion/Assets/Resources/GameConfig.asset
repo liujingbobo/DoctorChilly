@@ -24,6 +24,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f4d93257413e27f4ba8eca96461c1c29, type: 2}
     - {fileID: 11400000, guid: 8017cc72d16305945a2ab9fd487892b9, type: 2}
     - {fileID: 11400000, guid: de37258f738c114409346c1c4d6c0ec6, type: 2}
+    - {fileID: 21300000, guid: 1d87f8aa5ba5174418ba12c3f5727fec, type: 3}
     - {fileID: 21300000, guid: f5f282adec9d84b418e4e8811c18f3c6, type: 3}
     - {fileID: 21300000, guid: b9bb3ef285d51e54d859b9b7a59c2dae, type: 3}
     - {fileID: 21300000, guid: a8a7eb636fd6d48449c93a093ea7bb02, type: 3}
@@ -296,28 +297,34 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: HandConfigs
+    - Name: normalHandPack
       Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[GameConfig+HandPack, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 19
-    - Name: 
-      Entry: 7
-      Data: 9|GameConfig+HandPack, Assembly-CSharp
+      Data: 8|GameConfig+HandPack, Assembly-CSharp
     - Name: Hand
       Entry: 10
       Data: 8
     - Name: StartDialog
       Entry: 1
-      Data: hahahahaahha
+      Data: Test
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 1
+      Data: Test
+    - Name: LoseDialog
+      Entry: 1
+      Data: Test
     - Name: 
       Entry: 8
       Data: 
+    - Name: HandConfigs
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[GameConfig+HandPack, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 19
     - Name: 
       Entry: 7
       Data: 10|GameConfig+HandPack, Assembly-CSharp
@@ -326,8 +333,14 @@ MonoBehaviour:
       Data: 9
     - Name: StartDialog
       Entry: 1
-      Data: MICKEY~MOUSE!
+      Data: hahahahaahha
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -341,8 +354,14 @@ MonoBehaviour:
       Data: 10
     - Name: StartDialog
       Entry: 1
-      Data: BeepBeepBEpp
+      Data: MICKEY~MOUSE!
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -356,8 +375,14 @@ MonoBehaviour:
       Data: 11
     - Name: StartDialog
       Entry: 1
-      Data: "\u55B5\u55B5\u55B5"
+      Data: BeepBeepBEpp
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -371,8 +396,14 @@ MonoBehaviour:
       Data: 12
     - Name: StartDialog
       Entry: 1
-      Data: "\u771F\u5B9F\u306F\u3044\u3064\u3082\u4E00\u3064\uFF01"
+      Data: "\u55B5\u55B5\u55B5"
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -385,9 +416,15 @@ MonoBehaviour:
       Entry: 10
       Data: 13
     - Name: StartDialog
+      Entry: 1
+      Data: "\u771F\u5B9F\u306F\u3044\u3064\u3082\u4E00\u3064\uFF01"
+    - Name: EndDialog
       Entry: 6
       Data: 
-    - Name: EndDialog
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -405,6 +442,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -420,6 +463,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -430,9 +479,15 @@ MonoBehaviour:
       Entry: 10
       Data: 16
     - Name: StartDialog
-      Entry: 1
+      Entry: 6
       Data: 
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -445,9 +500,15 @@ MonoBehaviour:
       Entry: 10
       Data: 17
     - Name: StartDialog
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -465,6 +526,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -478,6 +545,12 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -495,6 +568,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -508,6 +587,12 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -525,6 +610,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -538,6 +629,12 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
       Entry: 6
       Data: 
     - Name: 
@@ -555,6 +652,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -570,6 +673,12 @@ MonoBehaviour:
     - Name: EndDialog
       Entry: 6
       Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -580,11 +689,38 @@ MonoBehaviour:
       Entry: 10
       Data: 26
     - Name: StartDialog
+      Entry: 6
+      Data: 
+    - Name: EndDialog
+      Entry: 6
+      Data: 
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|GameConfig+HandPack, Assembly-CSharp
+    - Name: Hand
+      Entry: 10
+      Data: 27
+    - Name: StartDialog
       Entry: 1
       Data: "\u6C6A\u545C~\u6C6A\u545C~"
     - Name: EndDialog
       Entry: 1
       Data: "\u6C6A\u6C6A\u6C6A\uFF01"
+    - Name: WinDialog
+      Entry: 6
+      Data: 
+    - Name: LoseDialog
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -596,11 +732,11 @@ MonoBehaviour:
       Data: 
     - Name: ResultDic
       Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[PharmacyResult, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 29|System.Collections.Generic.Dictionary`2[[PharmacyResult, Assembly-CSharp],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 29|System.Collections.Generic.EnumEqualityComparer`1[[PharmacyResult,
+      Data: 30|System.Collections.Generic.EnumEqualityComparer`1[[PharmacyResult,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -622,7 +758,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 10
-      Data: 27
+      Data: 28
     - Name: 
       Entry: 8
       Data: 
@@ -634,7 +770,7 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 10
-      Data: 28
+      Data: 29
     - Name: 
       Entry: 8
       Data: 
@@ -646,7 +782,7 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 10
-      Data: 29
+      Data: 30
     - Name: 
       Entry: 8
       Data: 
@@ -658,7 +794,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 10
-      Data: 30
+      Data: 31
     - Name: 
       Entry: 8
       Data: 

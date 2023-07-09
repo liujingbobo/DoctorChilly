@@ -30,6 +30,7 @@ public class BubbleManager : MonoBehaviour
     {
         singleton = this;
         speechBubble.transform.localScale = Vector3.zero;
+        endSpeechBubble.transform.localScale = Vector3.zero;
         emojiBubble.transform.localScale = Vector3.zero;
     }
 
