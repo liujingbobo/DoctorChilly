@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                 patientCount--;
                 
                 //select hands and select symptoms
-                CurrentHandPack = Config.RandomPickHandExcludeGiven(PrevHandPack);
+                CurrentHandPack = patientCount >=8? Config.normalHandPack: Config.RandomPickHandExcludeGiven(PrevHandPack);
                 CurrentSymtoms = patientCount < doubleSymptomAfterPatientCount?
                     Config.RandomlyGetSymtoms(2):
                     Config.RandomlyGetSymtoms(1);
