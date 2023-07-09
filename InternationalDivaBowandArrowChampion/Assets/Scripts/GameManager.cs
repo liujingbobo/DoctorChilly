@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -11,7 +12,7 @@ using Util;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
     private void Awake()
     {
         if (Instance)
@@ -33,13 +34,13 @@ public class GameManager : MonoBehaviour
     public GameConfig.HandPack PrevHandPack;
 
     public CreditPage creditPage;
-    
+
     [SerializeField] private Animator startScreenanimator;
     [SerializeField] private CutScenePlayer cutScenePlayer;
     [SerializeField] private Tutorial tutorial;
 
     public Image Fade;
-    
+
     private List<Symptom> CurrentSymtoms = new List<Symptom>();
 
     public int correct;
@@ -48,10 +49,28 @@ public class GameManager : MonoBehaviour
     public int doubleSymptomAfterPatientCount = 5;
 
     public GameState CurrentState;
-    
+
     private bool locked;
-    
+
     public float GameStartTime;
+    public Image heavySickIndicator;
+    public Image medicHeavySickIndicator;
+
+    public TMP_Text patientCountTxt;
+
+    private void Update()
+    {
+        if (CurrentState == GameState.State1)
+        {
+            patientCountTxt.gameObject.SetActive((true));
+            patientCountTxt.text = $"待诊: {GameManager.Instance.patientCount}";
+        }
+        else
+        {
+            patientCountTxt.gameObject.SetActive((false));
+        }
+    }
+
     private void Start()
     {
         CurrentState = GameState.StartScreen;
@@ -66,7 +85,10 @@ public class GameManager : MonoBehaviour
             locked = true;
             StartCoroutine(WaitTillEnd());
         }
+
         GameStartTime = Time.time;
+        heavySickIndicator.gameObject.SetActive(false);
+        medicHeavySickIndicator.gameObject.SetActive(false);
     }
 
     public void OpenCredit()
@@ -98,25 +120,41 @@ public class GameManager : MonoBehaviour
         BubbleManager.singleton.CloseSpeechBubble();
         BubbleManager.singleton.CloseEndSpeechBubble();
         BubbleManager.singleton.CloseEmojiBubble();
+        heavySickIndicator.gameObject.SetActive(false);
+        medicHeavySickIndicator.gameObject.SetActive(false);
         switch (newState)
         {
             case GameState.Tutorial:
                 break;
             case GameState.State1:
                 patientCount--;
-                
+
                 //select hands and select symptoms
-                CurrentHandPack = patientCount >=8? Config.normalHandPack: Config.RandomPickHandExcludeGiven(PrevHandPack);
-                CurrentSymtoms = patientCount < doubleSymptomAfterPatientCount?
-                    Config.RandomlyGetSymtoms(2):
-                    Config.RandomlyGetSymtoms(1);
-                
-                gamePlay1.SetUpHandAndSymptoms(CurrentHandPack, CurrentSymtoms.Select(x=>Config.SymptomPacks[x]).ToList());
+                CurrentHandPack = patientCount >= 8
+                    ? Config.normalHandPack
+                    : Config.RandomPickHandExcludeGiven(PrevHandPack);
+                var heavySick = patientCount < doubleSymptomAfterPatientCount;
+                CurrentSymtoms = heavySick ? Config.RandomlyGetSymtoms(2) : Config.RandomlyGetSymtoms(1);
+
+                //show heavy sick indicator
+                if (heavySick)
+                {
+                    heavySickIndicator.gameObject.SetActive(true);
+                }
+
+                gamePlay1.SetUpHandAndSymptoms(CurrentHandPack,
+                    CurrentSymtoms.Select(x => Config.SymptomPacks[x]).ToList());
                 pharmacy.gameObject.SetActive(false);
                 gamePlay1.gameObject.SetActive(true);
                 gamePlay1.StartPlay1Routine(CurrentSymtoms);
                 break;
             case GameState.State2:
+                //show heavy sick indicator
+                if (CurrentSymtoms.Count > 1)
+                {
+                    medicHeavySickIndicator.gameObject.SetActive(true);
+                }
+
                 PrevHandPack = CurrentHandPack;
                 gamePlay1.gameObject.SetActive(false);
                 pharmacy.gameObject.SetActive(true);
@@ -139,13 +177,16 @@ public class GameManager : MonoBehaviour
                 if (correct == 10)
                 {
                     result = PharmacyResult.Best;
-                }else if (correct >= 7)
+                }
+                else if (correct >= 7)
                 {
                     result = PharmacyResult.Good;
-                }else if (correct >= 4)
+                }
+                else if (correct >= 4)
                 {
                     result = PharmacyResult.Normal;
                 }
+
                 ending.Fill(result, correct);
                 break;
             default:
@@ -160,7 +201,7 @@ public class GameManager : MonoBehaviour
             correct++;
             gamePlay1.AddFlag();
         }
-        
+
         if (patientCount == 0)
         {
             ChangeState(GameState.Settlement);
@@ -172,7 +213,6 @@ public class GameManager : MonoBehaviour
                 SeManager.PlaySE(SEManager.SEType.CameraMove);
                 ChangeState(GameState.State1);
             }));
-
         }
     }
 
@@ -180,12 +220,13 @@ public class GameManager : MonoBehaviour
     {
         if (Fade)
         {
-            Fade.DOColor(new Color(0,0,0, 1), time).From(new Color(0,0,0,  0));
+            Fade.DOColor(new Color(0, 0, 0, 1), time).From(new Color(0, 0, 0, 0));
             yield return new WaitForSeconds(gap);
             endCallBack?.Invoke();
-            Fade.DOColor(new Color(0,0,0,  0), time).From(new Color(0,0,0,  1));
+            Fade.DOColor(new Color(0, 0, 0, 0), time).From(new Color(0, 0, 0, 1));
         }
     }
+
     public void PlayTap()
     {
         GameManager.Instance.SeManager.PlaySE(SEManager.SEType.Tap);
@@ -195,7 +236,6 @@ public class GameManager : MonoBehaviour
     {
         GameManager.Instance.SeManager.PlaySE(SEManager.SEType.SlightTap);
     }
-
 }
 
 public enum GameState
