@@ -5,11 +5,11 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using FMODUnity;
+using MoreMountains.Tools;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Util;
-using System = FMOD.System;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,8 +50,9 @@ public class GameManager : MonoBehaviour
 
     public int correct;
 
-    public int patientCount = 10;
-    public int doubleSymptomAfterPatientCount = 5;
+    public int patientRemain = 10;
+    
+    public int doubleSymptomAfterPatientCount = 6;
 
     public GameState CurrentState;
 
@@ -64,14 +65,14 @@ public class GameManager : MonoBehaviour
     public TMP_Text patientCountTxt;
 
     private List<GameConfig.HandPack> usedHands = new List<GameConfig.HandPack>();
-    private List<Symptom> initFourSymptoms = new List<Symptom>();
+    private Queue<List<Symptom>> symtoms = new Queue<List<Symptom>>();
     
     private void Update()
     {
         if (CurrentState == GameState.State1)
         {
             patientCountTxt.gameObject.SetActive((true));
-            patientCountTxt.text = $"待诊: {GameManager.Instance.patientCount}";
+            patientCountTxt.text = $"待诊: {GameManager.Instance.patientRemain}";
         }
         else
         {
@@ -86,8 +87,26 @@ public class GameManager : MonoBehaviour
         // ChangeState(GameState.StartScreen);
     }
 
+    public void GenerateConfig()
+    {
+        symtoms.Clear();
+        var baseSymtoms = new List<Symptom>(){Symptom.Cold,Symptom.Exhausted,Symptom.Fever,Symptom.Insomnia};
+        baseSymtoms.MMShuffle();
+        baseSymtoms.ForEach(_ =>
+        {
+            symtoms.Enqueue(new List<Symptom>(){_});
+        });
+        while (symtoms.Count < 10)
+        {
+            baseSymtoms.MMShuffle();
+            symtoms.Enqueue(new List<Symptom>(){baseSymtoms[0], baseSymtoms[1]});
+        }
+    }
+    
+    
     public void StartGame()
     {
+        GenerateConfig();
         correct = 0;
         if (!locked)
         {
@@ -99,17 +118,6 @@ public class GameManager : MonoBehaviour
         heavySickIndicator.gameObject.SetActive(false);
         medicHeavySickIndicator.gameObject.SetActive(false);
         usedHands = new List<GameConfig.HandPack>();
-        initFourSymptoms = new List<Symptom>(){Symptom.Cold,Symptom.Exhausted,Symptom.Fever,Symptom.Insomnia};
-        //randomize four basic symtop
-        int n = initFourSymptoms.Count;
-        while (n > 1)
-        {
-            n--;
-            int k = UnityEngine.Random.Range(0, n+1);
-            var value = initFourSymptoms[k];
-            initFourSymptoms[k] = initFourSymptoms[n];
-            initFourSymptoms[n] = value;
-        }
     }
 
     public void OpenCredit()
@@ -144,24 +152,26 @@ public class GameManager : MonoBehaviour
         BubbleManager.singleton.CloseEmojiBubble();
         heavySickIndicator.gameObject.SetActive(false);
         medicHeavySickIndicator.gameObject.SetActive(false);
+        
         switch (newState)
         {
             case GameState.Tutorial:
                 break;
             case GameState.State1:
-                patientCount--;
+                patientRemain--;
 
                 //select hands and select symptoms
-                CurrentHandPack = patientCount >= 8
+                CurrentHandPack = patientRemain >= 8
                     ? Config.normalHandPack
                     : Config.RandomPickHandExcludeGiven(usedHands);
-                var heavySick = patientCount < doubleSymptomAfterPatientCount;
+                
+                var heavySick = patientRemain <= doubleSymptomAfterPatientCount;
 
-                if (patientCount >= 6)
-                {
-                    CurrentSymtoms = new List<Symptom>() { initFourSymptoms[9 - patientCount] };
-                }
-                CurrentSymtoms = heavySick ? Config.RandomlyGetSymtoms(2) : Config.RandomlyGetSymtoms(1);
+                var sym = symtoms.Dequeue();
+                ;
+                sym.ForEach(_ => print(_.ToString()));
+                
+                CurrentSymtoms = sym;
 
                 //show heavy sick indicator
                 if (heavySick)
@@ -230,7 +240,7 @@ public class GameManager : MonoBehaviour
         }
 
         medicHeavySickIndicator.gameObject.SetActive(false);
-        if (patientCount == 0)
+        if (patientRemain == 0)
         {
             ChangeState(GameState.Settlement);
         }
